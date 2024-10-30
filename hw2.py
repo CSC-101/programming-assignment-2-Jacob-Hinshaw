@@ -30,6 +30,15 @@ def shorter_duration_than(time1:data.Duration, time2:data.Duration) -> bool:
 
 
 # Part 3
+def song_shorter_than(input1:list[data.Song], bound:data.Duration) -> list[data.Song]:
+    output = []
+    for song in input1:
+        if song.duration.minutes < bound.minutes:
+            output.append(song)
+        if song.duration.minutes == bound.minutes:
+            if song.duration.seconds < bound.seconds:
+                output.append(song)
+    return output
 
 
 # Part 4

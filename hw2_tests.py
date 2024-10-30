@@ -36,9 +36,24 @@ class TestCases(unittest.TestCase):
         expected = False
         self.assertEqual(expected, result)
 
-
     # Part 3
-
+    def test1_song_shorter_than(self):
+        input1 = [data.Song("Jacob", "Unicycle", data.Duration(90,0)),
+                  data.Song("Sophia", "Flute", data.Duration(30,0)),
+                  data.Song("Travis", "Soccer", data.Duration(120, 0))]
+        input2 = data.Duration(100, 30)
+        result = hw2.song_shorter_than(input1, input2)
+        expected = [data.Song("Jacob", "Unicycle", data.Duration(90,0)),
+                  data.Song("Sophia", "Flute", data.Duration(30,0))]
+        self.assertEqual(expected, result)
+    def test2_song_shorter_than(self):
+        input1 = [data.Song("Jacob", "Unicycle", data.Duration(90,0)),
+                  data.Song("Sophia", "Flute", data.Duration(30,0)),
+                  data.Song("Travis", "Soccer", data.Duration(120, 0))]
+        input2 = data.Duration(20, 30)
+        result = hw2.song_shorter_than(input1, input2)
+        expected = []
+        self.assertEqual(expected, result)
 
     # Part 4
 
