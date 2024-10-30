@@ -4,13 +4,6 @@ import data
 
 # Part 1
 def create_rectangle(point1:data.Point, point2:data.Point) -> data.Rectangle:
-#    if point1.x >= point2.x and point1.y <= point2.y:
-#        point_top_left = point2
-#        point_bottom_right = point1
-#    if point1.x <= point2.x and point1.y >= point2.y:
-#        point_top_left = point1
-#        point_bottom_right = point2
-#    return data.Rectangle(point_top_left, point_bottom_right)
     if point1.x >= point2.x:
         large_x = point1.x
         small_x = point2.x
@@ -27,6 +20,13 @@ def create_rectangle(point1:data.Point, point2:data.Point) -> data.Rectangle:
 
 
 # Part 2
+def shorter_duration_than(time1:data.Duration, time2:data.Duration) -> bool:
+    if time1.minutes < time2.minutes:
+        return True
+    if time1.minutes == time2.minutes:
+        if time1.seconds < time2.seconds:
+            return True
+    return False
 
 
 # Part 3

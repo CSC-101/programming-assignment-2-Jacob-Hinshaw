@@ -22,9 +22,19 @@ class TestCases(unittest.TestCase):
         expected = Rectangle(Point(2,10), Point(10,2))
         self.assertEqual(expected, result)
 
-
-
     # Part 2
+    def test1_shorter_duration_than(self):
+        input1 = data.Duration(100, 30)
+        input2 = data.Duration(90, 2)
+        result = hw2.shorter_duration_than(input1, input2)
+        expected = False
+        self.assertEqual(expected, result)
+    def test2_shorter_duration_than(self):
+        input1 = data.Duration(90, 2)
+        input2 = data.Duration(90, 2)
+        result = hw2.shorter_duration_than(input1, input2)
+        expected = False
+        self.assertEqual(expected, result)
 
 
     # Part 3
