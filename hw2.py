@@ -40,9 +40,17 @@ def song_shorter_than(input1:list[data.Song], bound:data.Duration) -> list[data.
                 output.append(song)
     return output
 
-
 # Part 4
-
+def running_time(input_list1:list[data.Song], input_list2:list[int]) -> data.Duration:
+    output = data.Duration(0,0)
+    for num in input_list2:
+        if 0 <= num <= len(input_list1):
+            output.minutes += input_list1[num].duration.minutes
+            output.seconds += input_list1[num].duration.seconds
+    while output.seconds >= 60:
+        output.minutes += 1
+        output.seconds -= 60
+    return output
 
 # Part 5
 

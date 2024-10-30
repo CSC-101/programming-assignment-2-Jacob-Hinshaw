@@ -56,8 +56,24 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Part 4
-
-
+    def test1_running_time(self):
+        input1 = [data.Song("Decemberists", "June Hymn", data.Duration(4,30)),
+                  data.Song("Broken Bells", "October", data.Duration(3,40)),
+                  data.Song("Kansas", "Dust in the Wind", data.Duration(3,29)),
+                  data.Song("Local Natives", "Airplanes", data.Duration(3,58))]
+        input2 = [0,2,1,3,0]
+        result = hw2.running_time(input1, input2)
+        expected = data.Duration(20,7)
+        self.assertEqual(expected, result)
+    def test2_running_time(self):
+        input1 = [data.Song("Decemberists", "June Hymn", data.Duration(4,30)),
+                  data.Song("Broken Bells", "October", data.Duration(3,40)),
+                  data.Song("Kansas", "Dust in the Wind", data.Duration(3,29)),
+                  data.Song("Local Natives", "Airplanes", data.Duration(3,58))]
+        input2 = [-1,10,2]
+        result = hw2.running_time(input1, input2)
+        expected = data.Duration(3,29)
+        self.assertEqual(expected, result)
     # Part 5
 
 
