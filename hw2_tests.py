@@ -75,10 +75,22 @@ class TestCases(unittest.TestCase):
         expected = data.Duration(3,29)
         self.assertEqual(expected, result)
     # Part 5
-
+    def test1_validate_route(self):
+        input2 = ['san luis obispo', 'santa margarita', 'atascadero']
+        input1 = [['san luis obispo', 'santa margarita'], ['san luis obispo', 'pismo beach'],
+                              ['atascadero', 'santa margarita'], ['atascadero', 'creston']]
+        result = hw2.validate_route(input1, input2)
+        expected = True
+        self.assertEqual(expected, result)
+    def test2_validate_route(self):
+        input2 = ['san luis obispo','atascadero']
+        input1 = [['san luis obispo', 'santa margarita'], ['san luis obispo', 'pismo beach'],
+                              ['atascadero', 'santa margarita'], ['atascadero', 'creston']]
+        result = hw2.validate_route(input1, input2)
+        expected = False
+        self.assertEqual(expected, result)
 
     # Part 6
-
 
 
 
